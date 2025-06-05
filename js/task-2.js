@@ -1,11 +1,9 @@
 function makeArray(firstArray, secondArray, maxLength) {
   const yeniDizi = firstArray.concat(secondArray);
-  const uzunluk = yeniDizi.length;
-  if (uzunluk < maxLength) {
-    return uzunluk;
-  } else {
-    return yeniDizi.slice(0, maxLength);
+  if (yeniDizi.length > maxLength) {
+    yeniDizi.length = maxLength;
   }
+  return yeniDizi;
 }
 
 console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); // ["Mango", "Poly", "Ajax"]
